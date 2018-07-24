@@ -1,7 +1,7 @@
+
 #top{
   background-image: url(../images/back.jpg);
   background-size: cover;
-  border: 1px solid red;
 }
 
 #heat{
@@ -54,12 +54,12 @@
   justify-content: center;
   align-items: center;
   background-color: powderblue;
-  transition: transform .5s ease-in-out
+  transition: transform 1s ease-in-out
 }
 
 .top_image ul.icons li:hover{
   background-color: rgba(255,255,255,0.8);
-  transform: rotateY(1turn);
+  transform: scale(1.5);
 }
 
 .menu_bar ul.bar_select {
@@ -68,6 +68,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
+  height: 200px;
 }
 
 .menu_bar ul.bar_select li{
@@ -87,18 +88,88 @@
   text-decoration: none;
 }
 
-.main_images{
+#main .main_images{
   display: flex;
-  flex-wrap: wrap;
 }
 
-@media (max-width:500px) {
+#main .main_images img{
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0;
+  display: block;
+}
+
+#main .main_images div{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-bottom: 1rem;
+  flex-grow: 1;
+  display: block;
+}
+
+#main .main_images h4{
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0.5);
+  padding-top: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-right: 1px solid rgba(255,255,255,0.3);
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 3px ;
+  border-bottom-right-radius: 3px ;
+}
+
+
+#footer{
+	text-align: center;
+	color: rgba(255,255,255,0.9);
+	font-weight: 200;
+	padding-bottom: 3rem;
+	font-size: 1rem;
+
+}
+
+#footer:before{
+	content: '';
+	margin: 2rem auto;
+	display: block;
+	border-top: 1px solid gray;
+	width: 15rem;
+	margin-bottom: 3rem;
+}
+
+@media (max-width:800px) {
   #main .main_images{
     margin-top: 2rem;
     display: block;
   }
-  .menu_bar ul.bar_select {
-    display: none;
-    padding: 2px;
+}
+
+@media (max-width:850px) {
+  .menu_bar ul.bar_select{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #main .main_images img,
+  #main .main_images h4{
+    width: 400px;
+    margin: 0 auto;
+  }
+  .top_image img{
+    animation: kong 4s infinite ease-in-out;
+  }
+  @keyframes kong {
+    from{
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+  #top{
+    background-image: url(../images/sky.jpg);
+    background-size: cover;
   }
 }
